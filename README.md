@@ -249,6 +249,7 @@ ORDER BY Weekday;
 ```
 ## 📁 Project Structure
 ```
+## 📁 Project Structure
 📦 Walmart-SQL-Project
 ┣ 📄 README.md
 ┣ 📄 walmart_sales_data.csv
