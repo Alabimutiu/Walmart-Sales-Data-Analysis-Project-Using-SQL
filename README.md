@@ -255,7 +255,7 @@ ORDER BY Weekday;
 ┣ 📄 README.md
 ┣ 📄 walmart_sales_data.csv
 ┣ 📄 Walmart_Analysis.sql
-┗ 📊 (Optional) dashboard.pbix / dashboard.ipynb
+
 ```
 
 ---
