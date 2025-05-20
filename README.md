@@ -227,7 +227,7 @@ ORDER BY Weekday;
 		ORDER BY Hour;
 ```
 ```sql
---Q.20 Total revenue for each branch for morning (6 AM to 12 PM), afternoon (12 PM to 6 PM), and evening (6 PM to 12 AM) periods using the time condition.
+--Q.21 Total revenue for each branch for morning (6 AM to 12 PM), afternoon (12 PM to 6 PM), and evening (6 PM to 12 AM) periods using the time condition.
    WITH new_table
     AS
   (SELECT*,
