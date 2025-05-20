@@ -296,4 +296,10 @@ ORDER BY Weekday;
 This project demonstrates how structured SQL queries can be used to extract valuable business intelligence from retail data. From sales strategy to customer segmentation, SQL is a powerful tool for understanding and optimizing business operations.
 
 ---
+## 👨‍💻 Author--Mutiu Sulaimon
+
+*This project is part of my data analytics portfolio, showcasing SQL skills relevant to public health data analysis.*
+
+### Connect with me
+- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/mutiu-sulaimon-7b604367/)
 
