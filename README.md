@@ -260,12 +260,12 @@ ORDER BY Weekday;
 
 ---
 
-## 📌 How to Use
-
-1. Clone the repository.
-2. Open the SQL script in your preferred SQL tool.
-3. Load the `walmart_sales_data.csv` into a database table.
-4. Run queries to explore the dataset.
+## 📁 Project Structure
+📦 Walmart-SQL-Project
+┣ 📄 README.md
+┣ 📄 walmart_sales_data.csv
+┣ 📄 Walmart_Analysis.sql
+┗ 📊 (Optional) dashboard.pbix / dashboard.ipynb
 
 ---
 ## 📌 How to Use
