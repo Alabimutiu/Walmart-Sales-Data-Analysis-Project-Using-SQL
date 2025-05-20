@@ -116,6 +116,88 @@ GROUP BY product_line
 ORDER BY Total_Sales DESC;
 ```
 ```sql
+-- 5. Gender-wise Sales Analysis
+SELECT gender, SUM(total) AS Total_Sales
+FROM walmart_sales
+GROUP BY gender;
+```
+```sql
+-- 6. Payment Method Preferences
+SELECT payment_method, COUNT(*) AS Transaction_Count
+FROM walmart_sales
+GROUP BY payment_method
+ORDER BY Transaction_Count DESC;
+```
+```sql
+-- 7. Average Quantity per Product Line
+SELECT product_line, AVG(quantity) AS Avg_Quantity
+FROM walmart_sales
+GROUP BY product_line;
+
+```
+```sql
+-- 8. Peak Shopping Hours
+SELECT EXTRACT (HOUR FROM time) AS Hour, COUNT(*) AS Transactions
+FROM walmart_sales
+GROUP BY Hour
+ORDER BY Transactions DESC;
+```
+```sql
+-- 9. Daily Sales Trend
+SELECT date, SUM(total) AS Daily_Sales
+FROM walmart_sales
+GROUP BY date
+ORDER BY date;
+```
+```sql
+-- 10. Average Rating by Product Line
+SELECT product_line,AVG(rating) AS Avg_Rating
+FROM walmart_sales
+GROUP BY product_line
+ORDER BY Avg_Rating DESC;
+```
+```sql
+-- 11. Gender-wise Average Spend
+SELECT gender, AVG(total) AS Avg_Spend
+FROM walmart_sales
+GROUP BY gender;
+```
+```sql
+-- 12. Running Total of Sales by Date
+SELECT date, SUM(total) OVER (ORDER BY date) AS Running_Total
+FROM walmart_sales;
+```
+```sql
+-- 13. Most Sold Product Lines by Quantity
+SELECT product_line, SUM(quantity) AS Total_Units_Sold
+FROM walmart_sales
+GROUP BY product_line
+ORDER BY Total_Units_Sold DESC;
+```
+```sql
+-- 14. Average Revenue Per Transaction by Branch
+SELECT branch, AVG(total) AS Avg_Transaction_Value
+FROM walmart_sales
+GROUP BY branch
+ORDER BY branch;
+```
+```sql
+-- 15. Transactions by Day of Week
+SELECT TO_CHAR(Date, 'Day') AS Weekday, COUNT(*) AS Transactions
+FROM walmart_sales
+GROUP BY Weekday
+ORDER BY Weekday;
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
 
 ```
 ```sql
