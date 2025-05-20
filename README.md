@@ -87,6 +87,13 @@ The dataset contains the following features:
 ---
 
 ## 🧮  SQL Queries
+```sql
+-- Running total of sales
+SELECT 
+    date,
+    SUM(total) OVER (ORDER BY date) AS running_total
+FROM walmart_sales;
+
 
 ## 📁 Project Structure
 
