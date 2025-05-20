@@ -87,7 +87,19 @@ The dataset contains the following features:
 ---
 
 ## 🧮  SQL Queries
-
+--sql
+-- 1. Total Revenue by Branch
+SELECT Branch, SUM(Total) AS Total_Revenue
+FROM walmart_sales
+GROUP BY Branch
+ORDER BY Total_Revenue DESC;
+---
+--sql
+-- 2. Average Spend per Customer Type
+SELECT `Customer Type`, AVG(Total) AS Avg_Spend
+FROM walmart_sales
+GROUP BY `Customer Type`;
+---
 
 
 ## 📁 Project Structure
