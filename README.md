@@ -84,6 +84,29 @@ The dataset contains the following features:
 ---
 
 ## 🧮  SQL Queries
+
+```sql
+---CREATE TABLE
+DROP TABLE IF EXISTS walmart_sales;
+CREATE TABLE walmart_sales(
+		                            invoice_id VARCHAR(15),
+		                            branch	CHAR(1),	
+		                            city  VARCHAR(25),  
+		                            customer_type	VARCHAR(15),
+		                            gender	VARCHAR(15),
+		                            product_line VARCHAR(55),	
+		                            unit_price	FLOAT,
+		                            quantity    INT, 	
+		                            vat	FLOAT,
+		                            total	FLOAT,
+		                            date	date,	
+		                            time time,
+		                            payment_method	VARCHAR(15),
+		                            rating FLOAT
+		                        );
+			
+
+```
 ```sql
 -- 1. Total Revenue by Branch
 SELECT branch, SUM(total) AS Total_Revenue
