@@ -96,7 +96,7 @@ FROM walmart_sales;
 
 ```
 ## 📁 Project Structure
-
+```
 📦 Walmart-SQL-Project
 ┣ 📄 README.md
 ┣ 📄 walmart_sales_data.csv
