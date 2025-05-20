@@ -298,7 +298,7 @@ This project demonstrates how structured SQL queries can be used to extract valu
 ---
 ## 👨‍💻 Author--Mutiu Sulaimon
 
-*This project is part of my data analytics portfolio, showcasing SQL skills relevant to public health data analysis.*
+*This project is part of my data analytics portfolio, showcasing SQL skills relevant to business data analysis.*
 
 ### Connect with me
 - **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/mutiu-sulaimon-7b604367/)
