@@ -259,15 +259,6 @@ ORDER BY Weekday;
 ```
 
 ---
-
-## 📁 Project Structure
-📦 Walmart-SQL-Project
-┣ 📄 README.md
-┣ 📄 walmart_sales_data.csv
-┣ 📄 Walmart_Analysis.sql
-┗ 📊 (Optional) dashboard.pbix / dashboard.ipynb
-
----
 ## 📌 How to Use
 
 1. Clone the repository.
