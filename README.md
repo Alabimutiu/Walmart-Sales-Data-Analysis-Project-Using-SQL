@@ -40,10 +40,7 @@ The dataset contains the following features:
 
 ## 🧰 Tools & Technologies
 
-- **Database:** SQLite
-- **Language:** SQL
-- **Environment:** Jupyter Notebook, DBeaver or DB Browser for SQLite
-- *(Optional visualization can be done in Power BI or Python)*
+- **Language:** PostgreSQL
 
 ---
 
@@ -54,7 +51,7 @@ The dataset contains the following features:
 - Subqueries and Common Table Expressions (CTEs)
 - Joins and filtering
 - Date and time extraction
-- Statistical functions (`AVG`, `STDDEV`, `MIN`, `MAX`)
+- Statistical functions (`AVG`)
 
 ---
 
@@ -189,19 +186,66 @@ GROUP BY Weekday
 ORDER BY Weekday;
 ```
 ```sql
+--Q.16 Total sales amount for each branch and hour of the day combination.
+       SELECT 
+	        branch,
+			EXTRACT(HOUR FROM time) AS hour,
+			SUM(total) AS Total_sales
+	   FROM walmart_sales
+	   GROUP BY 1,2
+	   ORDER BY 1,3 DESC
+```
+```sql
+-- 17. Top 5 Highest Revenue Transactions
+		SELECT *
+		FROM walmart_sales
+		ORDER BY total DESC
+		LIMIT 5;
+```
+```sql
+-- 18. Payment Distribution by Customer Type
+		SELECT customer_type, payment_method, COUNT(*) AS Count
+		FROM walmart_sales
+		GROUP BY customer_type, payment_method
+		ORDER BY customer_type, Count DESC;
 
 ```
 ```sql
-
+-- 19. Highest Rated Transaction per Branch
+		SELECT *
+		FROM (
+		    SELECT *, RANK() OVER (PARTITION BY branch ORDER BY rating DESC) AS rnk
+		    FROM walmart_sales
+		) AS ranked
+		WHERE rnk = 1;
 ```
 ```sql
-
+-- 20. Hourly Revenue Trend
+		SELECT EXTRACT(HOUR FROM time) AS Hour, SUM(total) AS Total_Revenue
+		FROM walmart_sales
+		GROUP BY Hour
+		ORDER BY Hour;
 ```
 ```sql
-
-```
-```sql
-
+--Q.20 Total revenue for each branch for morning (6 AM to 12 PM), afternoon (12 PM to 6 PM), and evening (6 PM to 12 AM) periods using the time condition.
+   WITH new_table
+    AS
+  (SELECT*,
+        CASE
+		  WHEN EXTRACT (HOUR FROM time) BETWEEN 6 AND 12 THEN 'Morning'
+		  WHEN EXTRACT (HOUR FROM time) >12 AND EXTRACT (HOUR FROM time) <=18 THEN 'Afternoon'
+          ELSE 'Evening'
+		 End AS Shift 
+	FROM walmart_sales	 
+	)
+   SELECT
+        branch,
+        Shift,
+	    SUM(total) AS Total_revenue,
+		COUNT(invoice_id) AS Number_of_order
+    FROM new_table
+	GROUP BY 1,2
+    ORDER BY 1,3 DESC
 ```
 ## 📁 Project Structure
 ```
@@ -220,7 +264,6 @@ ORDER BY Weekday;
 2. Open the SQL script in your preferred SQL tool.
 3. Load the `walmart_sales_data.csv` into a database table.
 4. Run queries to explore the dataset.
-5. Optional: Use Power BI / Python to visualize.
 
 ---
 
@@ -230,6 +273,3 @@ This project demonstrates how structured SQL queries can be used to extract valu
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License.
