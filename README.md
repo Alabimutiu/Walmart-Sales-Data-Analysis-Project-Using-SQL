@@ -109,7 +109,11 @@ GROUP BY city
 ORDER BY Total_Revenue DESC;
 ```
 ```sql
-
+-- 4. Product Line Performance (Revenue)
+SELECT product_line, SUM(total) AS Total_Sales
+FROM walmart_sales
+GROUP BY product_line
+ORDER BY Total_Sales DESC;
 ```
 ```sql
 
