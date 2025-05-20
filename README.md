@@ -88,11 +88,33 @@ The dataset contains the following features:
 
 ## 🧮  SQL Queries
 ```sql
--- Running total of sales
-SELECT 
-    date,
-    SUM(total) OVER (ORDER BY date) AS running_total
-FROM walmart_sales;
+-- 1. Total Revenue by Branch
+SELECT branch, SUM(total) AS Total_Revenue
+FROM walmart_sales
+GROUP BY branch
+ORDER BY Total_Revenue DESC;
+
+```
+```sql
+-- 2. Average Spend per Customer Type
+SELECT customer_type`, AVG(total) AS Avg_Spend
+FROM walmart_sales
+GROUP BY `customer_type`;
+```
+```sql
+-- 3. Top Performing Cities by Revenue
+SELECT city, SUM(total) AS Total_Revenue
+FROM walmart_sales
+GROUP BY city
+ORDER BY Total_Revenue DESC;
+```
+```sql
+
+```
+```sql
+
+```
+```sql
 
 ```
 ## 📁 Project Structure
